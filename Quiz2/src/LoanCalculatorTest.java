@@ -26,7 +26,17 @@ public class LoanCalculatorTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		LoanCalculator tuition = new LoanCalculator();
+		tuition.setTuitionCost(12520);
+		tuition.setPercentIncrease(5);
+		tuition.setTerm(10);
+		tuition.setRepaymentAPR(3);
+		
+		tuition.test();
+		equals(Math.abs(tuition.getLoanBalance() - 53962.77));
+		equals(Math.abs(tuition.getPmt() - 1618.35));
+		
+		
 	}
 
 }
